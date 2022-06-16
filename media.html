@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiveness and Media Queries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Poppins';
+        overflow: hidden;
+    }
+    .container {
+        color: #FFFFFF;
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        font-size: 16px;
+        grid-template-columns: 1fr 1fr;
+        background: linear-gradient(hsla(0, 100%, 74%, 0.85), 
+        hsl(0, 100%, 74%, 0.85)) ,url(./bg-intro-desktop.png);
+    }
+    .intro {
+        height: 50%;
+        width: 100%;
+        margin: auto;
+        padding: 10% 20%;
+    }
+    .intro h1 {
+        font-weight: bolder;
+    }
+    .intro p {
+        font-weight: lighter;
+        margin-top: 5%;
+        font-size: 12px;
+    }
+    .registration-form {
+        height: 50%;
+        width: 100%;
+        margin: 15% auto;
+    }
+    .promo {
+        background-color: hsl(248, 32%, 49%);
+        width: 65%;
+        border-radius: 10px;
+        padding: 1.5%;
+        margin-bottom: 2%;
+        text-align: center;
+        font-size: 12px;
+        box-shadow: 0 3px hsla(0, 8%, 55%, 0.498);
+    }
+    .inputs {
+        padding: 4%;
+        background-color: #FFFFFF;
+        height: 120%;
+        width: 65%;
+        border-radius: 3%;
+        box-shadow: 0 3px hsla(0, 8%, 55%, 0.498);
+        display: inline-block;
+    }
+    ::placeholder {
+        color: #333;
+        opacity: 1;
+        font-family: 'Poppins';
+    }
+    input {
+        height: 13%;
+        width: 100%;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid #eee;
+        padding: 3%;
+        font-family: 'Poppins';
+    }
+    input:focus{
+        border: 1px solid hsl(248, 32%, 49%);
+    }
+    input:focus:invalid {
+        border: 1px solid hsl(0, 100%, 74%);
+    }
+    input[type=submit] {
+        background-color: hsl(154, 59%, 51%);
+        color: #FFFFFF;
+        text-transform: uppercase;
+        text-align: center;
+        height: 25%;
+        width: 100%;
+        border-radius: 10px;
+        padding: 1.5%;
+        border: none;
+        outline: none;
+    }
+    .agreement {
+        font-size: 10px;
+        color: hsl(246, 25%, 77%);
+        text-align: center;
+        margin-top: 2%;
+    }
+    .red {
+        color: hsl(0, 100%, 74%);
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            display: block;
+            font-size: 14px;
+        }
+        .intro {
+            padding: 7% 20%;
+        }
+        .intro h1 {
+            font-weight: bold;
+        }
+        .intro p {
+            margin-top: 3%;
+            font-size: 10px;
+        }
+        .registration-form {
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: -8%;
+            margin-bottom: 4%;
+            height: 38%;
+            width: 80%;
+        }
+        .promo {
+            padding: 2%;
+            font-size: 10px;
+            margin-top: -5%;
+        }
+        input {
+            height: 6%;
+            padding: 1.5%;
+        }
+        input[type=submit] {
+            padding: 2.5%;
+            font-size: 12px;
+        }
+        .agreement {
+            font-size: 8px;
+        }
+    }
+</style>
+<body>
+    <main class="container">
+        <div class="intro">
+            <h1>Learn to code by watching others</h1>
+            <p>
+                see how experienced developers solve problems in real-time. Watching scripted 
+                tutorial is great, but understanding how developers think is invaluable.
+            </p>
+        </div>
+        <div class="registration-form">
+           <div class="promo">
+                <span>
+                    <b>Try it free 7 days</b> then $20/mo. thereafter
+                </span>
+           </div>
+                <form action="" class="inputs">
+                    <div>
+                        <input type="text" placeholder="First Name" required>
+                    </div><br>
+                    <div>
+                        <input type="text" placeholder="Last Name" required>
+                    </div><br>
+                    <div>
+                        <input type="email" placeholder="Email Address" required>
+                    </div><br>
+                    <div>
+                        <input type="password" placeholder="Password" required>
+                    </div><br>
+                    <div>
+                        <input type="submit" value="claim your free trial">
+                   </div>
+                    <div class="agreement">
+                        <span> By clicking the button, you are agreeing to our 
+                            <span class="red">Terms and Services</span>
+                        </span>
+                    </div>
+                </form>
+        </div>
+    </main>
+</body>
+</html>
